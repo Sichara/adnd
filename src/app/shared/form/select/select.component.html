@@ -1,0 +1,6 @@
+<select (change)="onChangeHandler($event)" class="form-control select__select">
+    <option value="">Select value</option>
+    <option *ngFor="let selectItem of selectItems" [value]="selectItem.value">
+        {{selectItem.label}}
+    </option>
+</select>

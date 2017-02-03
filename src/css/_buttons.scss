@@ -1,0 +1,16 @@
+@import "./base";
+
+%buttons {
+  background-color: $button-bg;
+  border: 1px solid $button-border-color;
+  color: $lighter-black;
+  text-transform: uppercase;
+  font-size: $font-size-smaller;
+  font-weight: $bold;
+}
+
+%buttons_disabled {
+  background-color: $button-disabled-bg;
+  border: 1px solid $button-disabled-border-color;
+  color: $button-disabled-text;
+}

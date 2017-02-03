@@ -1,0 +1,25 @@
+@import "./base";
+
+.modal-header {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: $main-blue;
+  color: $main-white;
+  font-weight: $bold;
+}
+
+.modal-content {
+  border-radius: 0;
+  background-color: $main-white;
+}
+
+.modal-body {
+  padding-top: 10px;
+  height: auto;
+  overflow: auto;
+}
+
+.close {
+  color: $main-white;
+  opacity: 1;
+}

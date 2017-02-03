@@ -1,0 +1,51 @@
+//base colors
+$main-blue: #2c82b4;
+$main-gray: #d3d8dd;
+$main-dim-gray: #5d5d5d;
+$main-black: #000;
+$main-white: #fff;
+$lighter-black: lighten($main-black, 20%);
+
+$tab-inactive-bg: #e7eaec;
+$tab-inactive-text: #8d8e8f;
+
+$tag-inactive-text: #838688;
+$drag-drop-zone-bg: #dae8f0;
+$status-bar-bg: #818b96;
+$table-row-bg: #f5f7f9;
+$table-title-bg: #d6dae1;
+$toolbar-bg: #f3f3f3;
+$border-color-main: #e3e3e3;
+$toolbar-box-shadow: 0 0 3px 0 rgba(86, 86, 86, 0.50);
+$border-color-darker: #bebebe;
+$container-box-shadow: 0 1px 2px 0 rgba(118,118,118,0.50);
+
+$button-bg: #f9f9f9;
+$button-border-color: #c9c9c9;
+$button-text-color: $main-dim-gray;
+
+$button-disabled-bg: #fafafa;
+$button-disabled-border-color: #e2e2e2;
+$button-disabled-text: #b0b0b0;
+
+$input-disabled-bg: $button-disabled-bg;
+$input-disabled-border-color: $button-disabled-border-color;
+$input-disabled-text: $button-disabled-text;
+
+$action-bar-bg-active: #d5d9dc;
+
+$accordion-checker-bg: #d8d8d8;
+
+$drop-down-text-color: #353535;
+
+//base sizes
+$font-size-smaller: 10px;
+$font-size-bigger: 12px;
+$normal: normal;
+$bold: bold;
+
+//bootstrap variables
+$font-size-base: 11px;
+$body-bg: $main-gray;
+$font-family-sans-serif: Arial;
+$border-radius-base: 0;

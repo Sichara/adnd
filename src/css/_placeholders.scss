@@ -1,0 +1,10 @@
+@import "./base";
+
+%grid-title {
+  background-color: $main-white;
+  color: $lighter-black;
+  font-size: $font-size-bigger;
+  font-weight: $bold;
+  margin: 0;
+  padding: 14px;
+}

@@ -1,0 +1,25 @@
+@import "./base";
+
+$nav-text-size: $font-size-bigger;
+$drop-down_caret-size: 4px;
+$drop-down-height: 30px;
+
+$menu-bg-color: $main-black;
+$menu-font-color: $main-white;
+
+//bootstrap variables
+//Navbar
+$navbar-height: 40px;
+$navbar-default-bg: $menu-bg-color;
+
+//Links
+$navbar-default-link-color: $menu-font-color;
+$navbar-default-link-hover-color: $navbar-default-link-color;
+$navbar-default-link-active-color: $navbar-default-link-color;
+$navbar-default-link-hover-bg: $main-blue;
+$navbar-default-link-active-bg: $main-blue;
+
+//Brand
+$navbar-default-brand-bg: $main-blue;
+$navbar-default-brand-hover-color: $menu-font-color;
+$navbar-default-brand-hover-bg: $navbar-default-brand-bg;

@@ -1,0 +1,26 @@
+@import "../../../../css/default";
+
+.st-btn {
+  text-transform: uppercase;
+  padding: 8px 15px;
+  font-size: $font-size-smaller;
+  font-weight: $bold;
+
+  &__default {
+      background-color: $button-bg;
+      border: 1px solid $button-border-color;
+      color: $button-text-color;
+  }
+
+  &__link {
+    background-color: transparent;
+    border: 1px solid transparent;
+    color: $button-text-color;
+  }
+
+  &:disabled {
+    background-color: $button-disabled-bg;
+    border: 1px solid $button-disabled-border-color;
+    color: $button-disabled-text;
+  }
+}
