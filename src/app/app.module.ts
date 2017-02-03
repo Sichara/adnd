@@ -1,20 +1,18 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { CharacterSheetComponent } from './character-sheet/character-sheet.component';
+import { AppRoutingModule } from './app-routing.module';
+import { CharacterSheetModule } from './character-sheet/character-sheet.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    CharacterSheetComponent
-  ],
   imports: [
     BrowserModule,
-    FormsModule,
-    HttpModule
+    AppRoutingModule,
+    CharacterSheetModule
+  ],
+  declarations: [
+    AppComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
