@@ -4,8 +4,55 @@ import { CharacterSheetComponent } from './character-sheet.component';
 
 const routes: Routes = [
   {
-    path: 'home',
-    component: CharacterSheetComponent
+    path: '',
+    component: CharacterSheetComponent,
+    children: [
+      {
+        path: 'races',
+        component: CharacterSheetComponent,
+        data: {
+          breadcrumb: 'Races'
+        },
+        children: [
+          {
+            path: 'dwarves',
+            component: CharacterSheetComponent,
+            data: {
+              breadcrumb: 'Dwarves'
+            }
+          },
+          {
+            path: 'elves',
+            component: CharacterSheetComponent,
+            data: {
+              breadcrumb: 'Elves'
+            }
+          },
+        ]
+      }, {
+        path: 'abilities',
+        component: CharacterSheetComponent,
+        data: {
+          breadcrumb: 'Abilities'
+        },
+        children: [
+          {
+            path: 'strength',
+            component: CharacterSheetComponent,
+            data: {
+              breadcrumb: 'Strength'
+            }
+          },
+          {
+            path: 'dexterity',
+            component: CharacterSheetComponent,
+            data: {
+              breadcrumb: 'Dexterity'
+            }
+          },
+        ]
+      }
+    ]
   }
 ];
 

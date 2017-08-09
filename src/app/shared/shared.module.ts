@@ -4,6 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { BaseLayoutModule } from './base-layout/base-layout.module';
 import { AbilitiesModule } from './abilities/abilities.module';
 import { StFormModule } from './form/form.module';
+import { BreadcrumbsModule } from './breadcrumbs/index';
+import { TreeModule } from 'angular-tree-component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
@@ -13,7 +16,10 @@ import { StFormModule } from './form/form.module';
     FormsModule,
     BaseLayoutModule,
     AbilitiesModule,
-    StFormModule
+    StFormModule,
+    TreeModule,
+    BreadcrumbsModule,
+    RouterModule
   ],
   declarations: []
 })
