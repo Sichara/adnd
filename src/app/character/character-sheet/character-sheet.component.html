@@ -1,0 +1,6 @@
+<app-base-layout>
+  <app-table-of-contents [nodes]="nodes$ | async"
+                         [withSelect]="false"
+                         (contentsClick)="onContentsClick($event)">
+  </app-table-of-contents>
+</app-base-layout>

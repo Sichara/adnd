@@ -1,0 +1,43 @@
+@import "../../../css/variables";
+
+.preloader {
+  position: absolute;
+  height: 2px;
+  display: block;
+  width: 100%;
+  background-color: $main-white;
+  border-radius: 2px;
+  overflow: hidden;
+
+  &__indeterminate {
+    background-color: $main-blue;
+
+    &:after {
+      content: '';
+      position: absolute;
+      background-color: inherit;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      will-change: left, right;
+      animation: indeterminate 1.5s infinite;
+    }
+  }
+}
+
+@keyframes indeterminate {
+  0% {
+    left: -200%;
+    right: 100%
+  }
+
+  60% {
+    left: 107%;
+    right: -8%
+  }
+
+  100% {
+    left: 107%;
+    right: -8%
+  }
+}

@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CharacterSheetComponent } from './character-sheet.component';
-import { SharedModule } from '../shared/shared.module';
-import { CharacterSheetRoutingModule } from './character-sheet-routing.module';
+import { SharedModule } from '../../shared/index';
+import { CharacterSheetService } from './character-sheet.service';
 
 @NgModule({
   imports: [
     SharedModule,
-    CharacterSheetRoutingModule
   ],
   declarations: [CharacterSheetComponent],
-  exports: [CharacterSheetComponent]
+  exports: [CharacterSheetComponent],
+  providers: [CharacterSheetService]
 })
 export class CharacterSheetModule { }

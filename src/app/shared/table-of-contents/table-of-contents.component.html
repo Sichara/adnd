@@ -1,0 +1,17 @@
+<div class="table-of-contents">
+  <tree-root [nodes]="nodes" [options]="treeOptions">
+    <ng-template #treeNodeTemplate let-node let-index="index">
+      <div class="card table-of-contents-panel" *ngIf="node.data.selected === undefined || node.data.selected === true || withSelect">
+        <div class="card-header table-of-contents__title">
+          <span class="app-link" (click)="onClick(node.data.url)">
+            {{ node.data.name }}
+          </span>
+        </div>
+        <div class="table-of-contents__select" *ngIf="withSelect">
+          <input type="checkbox" (change)="onSelect($event, node.data, node)" [checked]="node.data?.selected">
+        </div>
+      </div>
+    </ng-template>
+
+  </tree-root>
+</div>

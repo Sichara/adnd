@@ -1,12 +1,28 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { CharacterSheetComponent } from './character-sheet.component';
+import { CharacterSheetComponent } from './character-sheet/index';
+import { SpellListComponent } from './spell-list/index';
 
 const routes: Routes = [
   {
     path: '',
-    component: CharacterSheetComponent,
-    children: [
+    redirectTo: 'character-sheet',
+    pathMatch: 'full'
+  },
+      {
+        path: 'character-sheet',
+        component: CharacterSheetComponent,
+        data: {
+          breadcrumb: 'Character Sheet'
+        }
+      },
+      {
+        path: 'spells',
+        component: SpellListComponent,
+        data: {
+          breadcrumb: 'Spells'
+        }
+      },
       {
         path: 'races',
         component: CharacterSheetComponent,
@@ -52,8 +68,6 @@ const routes: Routes = [
           },
         ]
       }
-    ]
-  }
 ];
 
 @NgModule({

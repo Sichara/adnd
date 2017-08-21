@@ -1,25 +1,28 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { BaseLayoutModule } from './base-layout/base-layout.module';
-// import { AbilitiesModule } from './abilities/abilities.module';
-// import { StFormModule } from './form/form.module';
-import { BreadcrumbsModule } from './breadcrumbs/index';
 import { TreeModule } from 'angular-tree-component';
 import { RouterModule } from '@angular/router';
+
+import * as modules from './modules';
+// import * as services from './services';
+
+import { toArray } from 'lodash';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   imports: [
   ],
   exports: [
+    modules.TableOfContentsModule,
+    modules.BreadcrumbsModule,
+    modules.BaseLayoutModule,
+    // ...toArray<NgModule[]>(modules),
     CommonModule,
     FormsModule,
-    BaseLayoutModule,
-    // AbilitiesModule,
-    // StFormModule,
     TreeModule,
-    BreadcrumbsModule,
-    RouterModule
+    RouterModule,
+    HttpModule
   ],
   declarations: []
 })

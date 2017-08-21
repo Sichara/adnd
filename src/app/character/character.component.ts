@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { ITreeOptions } from 'angular-tree-component';
-import { Event, NavigationEnd, Router } from '@angular/router';
+import { ActivatedRoute, Event, NavigationEnd, Params, Router } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
+import { CharacterSheetService } from './character-sheet/character-sheet.service';
 
 const CONTENT = {
   '/abilities/strength': `Strength (Str) measures a character's muscle, endurance, and stamina. This ability is
@@ -50,66 +51,9 @@ dwarves, and hate the evil denizens of the woods.`
 };
 
 @Component({
-  selector: 'app-character-sheet',
-  templateUrl: './character-sheet.component.html',
-  styleUrls: ['./character-sheet.component.scss'],
+  selector: 'app-character',
+  templateUrl: './character.component.html',
   encapsulation: ViewEncapsulation.None
 })
-export class CharacterSheetComponent implements OnInit {
-  nodes: any = [
-    {
-      id: 1,
-      name: 'Ability Scores',
-      url: '/abilities',
-      children: [
-        {
-          id: 2,
-          name: 'Strength',
-          url: '/abilities/strength'
-        },
-        {
-          id: 3, name: 'Dexterity',
-          url: '/abilities/dexterity'
-        }
-      ]
-    },
-    {
-      id: 4,
-      name: 'Player Character Races',
-      url: '/races',
-      children: [
-        {
-          id: 5, name: 'Dwarves',
-          url: '/races/dwarves'
-        },
-        {
-          id: 6,
-          name: 'Elves',
-          url: '/races/elves'
-        }
-      ]
-    }
-  ];
-
-  treeOptions: ITreeOptions = {
-    allowDrag: true
-  };
-
-  content: string = '';
-
-  constructor(private router: Router) {
-  }
-
-  ngOnInit() {
-    this.router.events.subscribe((event: Event) => {
-      if (event instanceof NavigationEnd) {
-        if (CONTENT[this.router.routerState.snapshot.url]) {
-          this.content = CONTENT[this.router.routerState.snapshot.url];
-        } else {
-          this.content = '';
-        }
-      }
-    });
-  }
-
+export class CharacterComponent {
 }

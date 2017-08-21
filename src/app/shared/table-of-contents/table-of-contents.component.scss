@@ -1,0 +1,37 @@
+@import "../../../css/variables";
+
+.table-of-contents {
+  .table-of-contents-panel {
+    width: 100%;
+    flex-direction: row;
+  }
+
+  &__title {
+    width: 100%;
+  }
+
+  .node-content-wrapper {
+    display: block;
+    width: 100%;
+  }
+
+  .toggle-children-wrapper {
+    display: block;
+    border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
+    padding: 0.75rem 1.25rem;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    background-color: $main-gray;
+  }
+
+  .toggle-children {
+  }
+
+  .node-wrapper {
+    align-items: center;
+  }
+
+  &__select {
+    @extend .toggle-children-wrapper;
+    margin-left: 10px;
+  }
+}
