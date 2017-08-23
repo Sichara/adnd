@@ -70,7 +70,7 @@ export class BreadcrumbsComponent implements OnInit {
       }
 
       // verify the custom data property "breadcrumb" is specified on the route
-      if (!child.snapshot.data.hasOwnProperty(ROUTE_DATA_BREADCRUMB)) {
+      if (!child.snapshot.data.hasOwnProperty(ROUTE_DATA_BREADCRUMB) && !child.snapshot.params['id']) {
         return this.getBreadcrumbs(child, url, breadcrumbs);
       }
 
@@ -82,7 +82,7 @@ export class BreadcrumbsComponent implements OnInit {
 
       // add breadcrumb
       const breadcrumb: IBreadcrumb = {
-        label: child.snapshot.data[ROUTE_DATA_BREADCRUMB],
+        label: child.snapshot.data[ROUTE_DATA_BREADCRUMB] || child.snapshot.params['id'],
         params: child.snapshot.params,
         url: url
       };

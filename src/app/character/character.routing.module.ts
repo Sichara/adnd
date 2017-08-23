@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CharacterSheetComponent } from './character-sheet/index';
 import { SpellListComponent } from './spell-list/index';
+import { HelpComponent } from './help/index';
 
 const routes: Routes = [
   {
@@ -9,65 +10,74 @@ const routes: Routes = [
     redirectTo: 'character-sheet',
     pathMatch: 'full'
   },
+  {
+    path: 'character-sheet',
+    component: CharacterSheetComponent,
+    data: {
+      breadcrumb: 'Character Sheet'
+    }
+  },
+  {
+    path: 'spells',
+    component: SpellListComponent,
+    data: {
+      breadcrumb: 'Spells'
+    }
+  },
+  {
+    path: 'races',
+    component: CharacterSheetComponent,
+    data: {
+      breadcrumb: 'Races'
+    },
+    children: [
       {
-        path: 'character-sheet',
+        path: 'dwarves',
         component: CharacterSheetComponent,
         data: {
-          breadcrumb: 'Character Sheet'
+          breadcrumb: 'Dwarves'
         }
       },
       {
-        path: 'spells',
-        component: SpellListComponent,
+        path: 'elves',
+        component: CharacterSheetComponent,
         data: {
-          breadcrumb: 'Spells'
+          breadcrumb: 'Elves'
+        }
+      },
+    ]
+  }, {
+    path: 'abilities',
+    component: CharacterSheetComponent,
+    data: {
+      breadcrumb: 'Abilities'
+    },
+    children: [
+      {
+        path: 'strength',
+        component: CharacterSheetComponent,
+        data: {
+          breadcrumb: 'Strength'
         }
       },
       {
-        path: 'races',
+        path: 'dexterity',
         component: CharacterSheetComponent,
         data: {
-          breadcrumb: 'Races'
-        },
-        children: [
-          {
-            path: 'dwarves',
-            component: CharacterSheetComponent,
-            data: {
-              breadcrumb: 'Dwarves'
-            }
-          },
-          {
-            path: 'elves',
-            component: CharacterSheetComponent,
-            data: {
-              breadcrumb: 'Elves'
-            }
-          },
-        ]
-      }, {
-        path: 'abilities',
-        component: CharacterSheetComponent,
-        data: {
-          breadcrumb: 'Abilities'
-        },
-        children: [
-          {
-            path: 'strength',
-            component: CharacterSheetComponent,
-            data: {
-              breadcrumb: 'Strength'
-            }
-          },
-          {
-            path: 'dexterity',
-            component: CharacterSheetComponent,
-            data: {
-              breadcrumb: 'Dexterity'
-            }
-          },
-        ]
-      }
+          breadcrumb: 'Dexterity'
+        }
+      },
+    ]
+  }, {
+    path: 'help',
+    component: HelpComponent,
+    data: {
+      breadcrumb: 'Help'
+    }
+  }, {
+    path: 'help/:id',
+    component: HelpComponent
+  }
 ];
 
 @NgModule({
@@ -75,4 +85,5 @@ const routes: Routes = [
   exports: [RouterModule],
   providers: []
 })
-export class CharacterSheetRoutingModule { }
+export class CharacterSheetRoutingModule {
+}

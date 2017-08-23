@@ -1,6 +1,7 @@
 <app-base-layout>
   <app-table-of-contents [nodes]="spellList$ | async"
                          [withSelect]="true"
+                         (contentsClick)="onContentsClick($event)"
                          (selectItem)="onSelectSpell($event)">
   </app-table-of-contents>
 </app-base-layout>

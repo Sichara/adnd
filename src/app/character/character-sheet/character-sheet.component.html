@@ -1,4 +1,80 @@
 <app-base-layout>
+  <div>
+    <div>
+      <label for="isMagic" class="form-check-label">
+      <input id="isMagic" class="form-check-input"
+             [(ngModel)]="magic"
+             type="checkbox"
+             (ngModelChange)="getToHitModification()">
+          Is magic
+        </label>
+      </div>
+    <div>
+      <label for="magicAdj">
+      Magic adjustment
+    </label>
+    <input id="magicAdj" class="form-control"
+           [(ngModel)]="magicAdj"
+           type="number"
+           (ngModelChange)="getToHitModification()">
+    <label for="str">
+      Strength:
+    </label>
+    <input id="str" class="form-control"
+           [(ngModel)]="strength"
+           type="number"
+           min="1"
+           max="18"
+           (ngModelChange)="getToHitModification()">
+    <label for="dextr">
+      Dexterity:
+    </label>
+    <input id="dextr" class="form-control"
+           [(ngModel)]="dexterity"
+           type="number"
+           min="1"
+           max="18"
+           (ngModelChange)="getToHitModification()">
+    </div>
+    <div class="form-group">
+    <span>Disposition</span>
+    <div class="form-check">
+      <label class="form-check-label">
+        <input type="radio" class="form-check-input"
+               name="optionsRadios"
+               id="optionsRadios1"
+               [(ngModel)]="disposition"
+               (ngModelChange)="getToHitModification()"
+               value="-1">
+        Lower
+      </label>
+    </div>
+    <div class="form-check">
+    <label class="form-check-label">
+        <input type="radio" class="form-check-input"
+               name="optionsRadios"
+               id="optionsRadios2"
+               [(ngModel)]="disposition"
+               (ngModelChange)="getToHitModification()"
+               value="0" [checked]="true">
+        On the same high
+      </label>
+    </div>
+    <div class="form-check">
+    <label class="form-check-label">
+        <input type="radio" class="form-check-input"
+               name="optionsRadios" id="optionsRadios3"
+               [(ngModel)]="disposition"
+               (ngModelChange)="getToHitModification()"
+               value="1">
+        Higher
+      </label>
+    </div>
+  </div>
+  </div>
+  <div>
+    To hit: {{ toHit }}
+  </div>
   <app-table-of-contents [nodes]="nodes$ | async"
                          [withSelect]="false"
                          (contentsClick)="onContentsClick($event)">
